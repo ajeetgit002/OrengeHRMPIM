@@ -1,0 +1,298 @@
+[
+  {
+    "description": "    As a user\n    I want to create a PIM (Product Information Management)\n    So that I can manage product-related data effectively",
+    "elements": [
+      {
+        "description": "",
+        "id": "pim-creation;successfully-create-a-new-pim",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Successfully create a new PIM",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4149432499
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I emter valid username and password",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1114104300
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1484312000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I navigate to the PIM creation page",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:12"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2137938499
+            },
+            "embeddings": [
+              {
+                "data": "UElNIFBhZ2UgSGVhZGVyIGlzIHZpc2libGU=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I fill in the required fields with valid data",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1326097199
+            },
+            "embeddings": [
+              {
+                "data": "QWRkIEVtcGxveWVlIFBhZ2UgSGVhZGVyIGlzIHZpc2libGU=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "RW1wbG95ZWUgSUQgaXMgOTc0Nzg2",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on the Save button",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1033498000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see a confirmation message \"Success\"",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:182"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1352116898
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I enter Employee Personal Information Management",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:50"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 7536910799
+            },
+            "embeddings": [
+              {
+                "data": "T3RoZXIgSUQgaXMgMFU1TjdZ",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "RHJpdmluZyBMaWNlbnNlIGlzIDRBTlJEVU9a",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "TGljZW5zZSBFeHBpcnkgRGF0ZSBpcyAyMDM1LTAxLTAz",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "TmF0aW9uYWxpdHkgaXMgSW5kaWFu",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "TWFyaXRhbCBTdGF0dXMgaXMgTWFycmllZA==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "RGF0ZSBvZiBCaXJ0aCBpcyAxOTk2LTAyLTI2",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "R2VuZGVyIGlzIEZlbWFsZQ==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "U3VjY2VzcyBtZXNzYWdlIGlzIFN1Y2Nlc3M=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Qmxvb2QgVHlwZSBpcyBPLQ==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "VGVzdCBGaWVsZCBpcyBTYW1wbGUgVGV4dA==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q3VzdG9tIFN1Y2Nlc3MgbWVzc2FnZSBpcyBTdWNjZXNz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I enter Employee Contact Information Management",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:93"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4778571999
+            },
+            "embeddings": [
+              {
+                "data": "Q29udGFjdCBEZXRhaWxzIFBhZ2UgSGVhZGVyIDpDb250YWN0IERldGFpbHM=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBIb21lIE51bWJlciA6NDY0NTk1MTk5MDk0NjYz",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBNaWJpbGUgTnVtYmVyIDooNzE2KTg2NS05NjU4",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBPZmZpY2UgTnVtYmVyIDo5ODItMzA0LTY2MTQ4MjA3",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBPZmZpY2UgRW1haWwgIDpEZWFuZ2Vsb19Db3J3aW41NUB5YWhvby5jb20=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBPdGhlciBFbWFpbCA6RXBocmFpbTg5QHlhaG9vLmNvbQ==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q3VzdG9tIFN1Y2Nlc3MgbWVzc2FnZSBpcyBTdWNjZXNz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I enter Employee Job Information",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:121"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4616430998
+            },
+            "embeddings": [
+              {
+                "data": "Q3VzdG9tIFN1Y2Nlc3MgbWVzc2FnZSBpcyBTdWNjZXNz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I enter Qualification Information",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:151"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2281203199
+            },
+            "embeddings": [
+              {
+                "data": "Q3VzdG9tIFN1Y2Nlc3MgbWVzc2FnZSBpcyBTdWNjZXNz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the new PIM should be listed in the PIM management section",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:190"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2586745800
+            },
+            "embeddings": [
+              {
+                "data": "UElNIFBhZ2UgSGVhZGVyIGlzIHZpc2libGU=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 199899
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pim-creation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "PIM Creation",
+    "tags": [],
+    "uri": "features\\featur-files\\PIMCreation.feature"
+  }
+]
