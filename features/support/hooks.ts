@@ -59,7 +59,7 @@ AfterStep(async function (this: CustomWorld, scenario) {
 
 After(async function (this: CustomWorld) {
     try {
-      //await this.context?.close();
+      await this.context?.close();
     } catch (error) {
         console.error('Failed to close context:', error);
     }
