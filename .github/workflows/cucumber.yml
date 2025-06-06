@@ -1,36 +1,54 @@
-name: Run Cucumber Smoke Tests
+name: CI/CD Pipeline for PIM Project
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  cucumber-tests:
+  build-test-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      # 1. Checkout Code
+      - name: Checkout Code
         uses: actions/checkout@v3
 
+      # 2. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
+      # 3. Install Dependencies
       - name: Install dependencies
-        run: npm ci  # or use `npm install` if you prefer
+        run: npm ci
 
-      - name: Run generateExcel.ts script
+      # 4. Optional: Run Build (if you have one)
+      - name: Run build step
+        run: npm run build || echo "No build step found"
+
+      # 5. Generate Test Excel (custom utility)
+      - name: Generate Excel Report
         run: npx ts-node src/utils/generateExcel.ts
 
+      # 6. Run Cucumber Smoke Tests
       - name: Run Cucumber smoke tests
         run: npx cucumber-js features/PIMCreation.feature --tags "@smoke"
 
-      - name: Upload failure screenshots
+      # 7. Upload Screenshots (Artifacts on failure)
+      - name: Upload screenshots
         if: failure()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v3
         with:
-          name: cucumber-screenshots
-          path: test-results/screenshots
+          name: failure-screenshots
+          path: test-results/screenshots/
+
+      # 8. Deploy step (optional)
+      - name: Deploy to server
+        if: success()
+        run: |
+          echo "Deploying to server..."
+          # Add your deployment logic here
+          # For example, using SSH to upload files or run a remote script
