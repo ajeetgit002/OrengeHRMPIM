@@ -67,7 +67,7 @@ After(async function (this: CustomWorld) {
 
 AfterAll(async function () {
     try {
- //await browser?.close();
+ await browser?.close();
     } catch (error) {
         console.error('Failed to close browser:', error);
     }
