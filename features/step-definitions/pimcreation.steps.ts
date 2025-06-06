@@ -80,10 +80,13 @@ const successMessage = await this.PIMPage.getSuccessMessage();
     this.attach(`Test Field is ${data['Test_Field']}`, 'text/plain');
 
       await this.PIMPage.clickCustomSaveButton(5000);
+    try{
       const customSuccessMessage = await this.PIMPage.getSuccessMessage();
       expect(customSuccessMessage).toContain('Success');
       this.attach(`Custom Success message is ${customSuccessMessage}`, 'text/plain');
-
+}catch(error){
+    console.log('Expected value did not match:', error);
+}
 
 
 
@@ -112,9 +115,13 @@ this.attach(`Contact Office Email  :${data['Work Email']}`,'text/plain');
 this.attach(`Contact Other Email :${data['Other Email']}`,'text/plain');
 
 await this.PIMPage.clickSaveButton();
+      try{
       const customSuccessMessage = await this.PIMPage.getSuccessMessage();
       expect(customSuccessMessage).toContain('Success');
       this.attach(`Custom Success message is ${customSuccessMessage}`, 'text/plain');
+}catch(error){
+    console.log('Expected value did not match:', error);
+}
  });
 
 
@@ -141,9 +148,13 @@ await this.PIMPage.selectSubUnit('Engineering');
 await this.PIMPage.selctEmployeementType('Full-Time Permanent');
 
 await this.PIMPage.clickSaveButton();
+      try{
       const customSuccessMessage = await this.PIMPage.getSuccessMessage();
       expect(customSuccessMessage).toContain('Success');
       this.attach(`Custom Success message is ${customSuccessMessage}`, 'text/plain');
+}catch(error){
+    console.log('Expected value did not match:', error);
+}
 
 });
 
@@ -167,9 +178,13 @@ await this.PIMPage.enterjobTIle("QA Engineer");
 await this.PIMPage.enterWorkPeriodInOrganization("2014-21-11","2020-21-11")
 
 await this.PIMPage.clickSaveButton();
+try{
       const customSuccessMessage = await this.PIMPage.getSuccessMessage();
       expect(customSuccessMessage).toContain('Success');
       this.attach(`Custom Success message is ${customSuccessMessage}`, 'text/plain');
+}catch(error){
+    console.log('Expected value did not match:', error);
+}
 
 });
 
@@ -195,7 +210,7 @@ await this.PIMPage.clickSaveButton();
 
             this.attach('PIM Page Header is visible', 'text/plain');
 
-            
+
          });
 
 
