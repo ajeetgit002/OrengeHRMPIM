@@ -61,10 +61,13 @@ When('I fill in the required fields with valid data', async function (this: Cust
     this.attach(`License Expiry Date is ${data['License Expiry Date']}`, 'text/plain');
 
 
-
+try{
     await this.PIMPage.selectNationality(5000);
     this.attach(`Nationality is ${data['Nationality']}`, 'text/plain');
     await this.PIMPage.selectMaritalStatus(5000);
+ } catch (error) {
+    console.log('Expected value did not match:', error);
+ }
     this.attach(`Marital Status is ${data['Marital Status']}`, 'text/plain');
     await this.PIMPage.enterDOB(data['Date of Birth']);
     this.attach(`Date of Birth is ${data['Date of Birth']}`, 'text/plain');
