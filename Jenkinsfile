@@ -31,9 +31,6 @@ pipeline {
 
         stage('Run Cucumber Tests') {
     steps {
-        echo 'Generating Excel file...'
-        bat 'npx ts-node src/utils/generateExcel.ts'
-
         echo 'Running Cucumber smoke tests...'
        bat'npx cucumber-js --tags "@smoke"'
     }
