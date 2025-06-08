@@ -1,27 +1,20 @@
-# Use official Node.js LTS image as base
-FROM node:18
+# Use official Playwright image with all dependencies
+FROM mcr.microsoft.com/playwright:v1.44.0-jammy
 
-# Set working directory inside container
+# Set working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json first for caching dependencies
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies (including Playwright)
+# Install dependencies (assumes package-lock.json is present)
 RUN npm ci
 
-# Install Playwright browsers (required for tests)
-RUN npx playwright install --with-deps
-
-# Copy rest of the app source code
+# Copy the rest of the project files
 COPY . .
 
-# Build the project (if you have a build step)
-RUN npm run build
+# Install Playwright browsers (if not already preinstalled in the base image)
+RUN npx playwright install --with-deps
 
-# Default command to run tests or your app
-# Change this as per your test script or start script
+# Run tests by default (you can override this in Jenkins)
 CMD ["npx", "playwright", "test"]
-
-# If you want to expose any port (e.g., for app running)
-# EXPOSE 3000
