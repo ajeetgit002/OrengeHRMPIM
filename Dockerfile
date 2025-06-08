@@ -1,20 +1,14 @@
-# Use official Playwright image with all dependencies
-FROM mcr.microsoft.com/playwright:v1.44.0-jammy
+# Use a Node.js + Playwright base image
+FROM mcr.microsoft.com/playwright:v1.43.1-jammy
 
-# Set working directory inside the container
+# Set working directory inside container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
-
-# Install dependencies (assumes package-lock.json is present)
-RUN npm ci
-
-# Copy the rest of the project files
+# Copy all files from host to container
 COPY . .
 
-# Install Playwright browsers (if not already preinstalled in the base image)
-RUN npx playwright install --with-deps
+# Install dependencies
+RUN npm ci
 
-# Run tests by default (you can override this in Jenkins)
-CMD ["npx", "playwright", "test"]
+# Run Excel generation first, then run tests
+CMD ["sh", "-c", "npx ts-node src/utils/generateExcel.ts && npx cucumber-js features/PIMCreation.feature --tags @smoke"]
