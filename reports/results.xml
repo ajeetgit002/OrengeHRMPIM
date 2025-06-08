@@ -1,16 +1,19 @@
 <?xml version="1.0"?>
-<testsuite name="Cucumber" time="39.941" tests="1" skipped="0" failures="0" errors="0" timestamp="2025-06-08T09:36:14.242Z">
-  <testcase classname="PIM Creation" name="Successfully create a new PIM" time="39.723">
+<testsuite name="Cucumber" time="22.901" tests="1" skipped="0" failures="1" errors="0" timestamp="2025-06-08T10:24:16.989Z">
+  <testcase classname="PIM Creation" name="Successfully create a new PIM" time="22.427">
+    <failure type="TimeoutError" message="page.click: Timeout 10000ms exceeded.&#xA;Call log:&#xA;[2m  - waiting for locator('//button[@type=\'submit\']')[22m&#xA;[2m    - locator resolved to &lt;button type=&quot;submit&quot; data-v-10d463b7=&quot;&quot; data-v-0af708be=&quot;&quot; class=&quot;oxd-button oxd-button--medium oxd-button--main orangehrm-login-button&quot;>…&lt;/button>[22m&#xA;[2m  - attempting click action[22m&#xA;[2m    - waiting for element to be visible, enabled and stable[22m&#xA;[2m    - element is visible, enabled and stable[22m&#xA;[2m    - scrolling into view if needed[22m&#xA;[2m    - done scrolling[22m&#xA;[2m    - performing click action[22m&#xA;[2m    - click action done[22m&#xA;[2m    - waiting for scheduled navigations to finish[22m&#xA;"><![CDATA[    at PlaywrightUtils.click (C:\Users\Ajit\OneDrive\Desktop\OrengeHRMPIM\src\utils\playwright_utils.ts:71:25)
+    at Login_Page.clickLoginButton (C:\Users\Ajit\OneDrive\Desktop\OrengeHRMPIM\src\pages\login_Page.ts:36:36)
+    at World.<anonymous> (C:\Users\Ajit\OneDrive\Desktop\OrengeHRMPIM\features\step-definitions\sample.steps.ts:17:25)]]></failure>
     <system-out><![CDATA[When I enter valid username and password....................................passed
-And I click on the login button.............................................passed
-And I navigate to the PIM creation page.....................................passed
-When I fill in the required fields with valid data..........................passed
-And I click on the Save button..............................................passed
-Then I should see a confirmation message "Success"..........................passed
-When I enter Employee Personal Information Management.......................passed
-And I enter Employee Contact Information Management.........................passed
-And I enter Employee Job Information........................................passed
-And I enter Qualification Information.......................................passed
-And the new PIM should be listed in the PIM management section..............passed]]></system-out>
+And I click on the login button.............................................failed
+And I navigate to the PIM creation page.....................................skipped
+When I fill in the required fields with valid data..........................skipped
+And I click on the Save button..............................................skipped
+Then I should see a confirmation message "Success"..........................skipped
+When I enter Employee Personal Information Management.......................skipped
+And I enter Employee Contact Information Management.........................skipped
+And I enter Employee Job Information........................................skipped
+And I enter Qualification Information.......................................skipped
+And the new PIM should be listed in the PIM management section..............skipped]]></system-out>
   </testcase>
 </testsuite>
