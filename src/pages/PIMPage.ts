@@ -99,13 +99,14 @@ export class PIMPage {
     async selectNationality(timeout?: number) {
         await this.PLaywrightUtils.click(this.selector.nationality, timeout);
 
-        // Type the letter 'I' four times to navigate to the "Indian" option
-        await this.page.keyboard.type('I', { delay: 100 }); // Type 'I'
-        await this.page.keyboard.type('I', { delay: 100 }); // Type 'I'
-        await this.page.keyboard.type('I', { delay: 100 }); // Type 'I'
+         // Type the letter 'I' four times to navigate to the "Indian" option
+        await this.page.keyboard.type('A', { delay: 100 }); // Type 'I'
+        await this.page.keyboard.type('A', { delay: 100 }); // Type 'I'
+        await this.page.keyboard.type('A', { delay: 100 }); // Type 'I'
+        await this.page.keyboard.type('A', { delay: 100 }); // Type 'I'
 
         // Wait for the "Indian" option to be visible
-        const indianOption = await this.page.getByText('Indian', { exact: true });
+        const indianOption = await this.page.getByText('American', { exact: true });
         await indianOption.waitFor({ state: 'visible' });
 
         // Click on the "Indian" option
