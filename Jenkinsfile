@@ -2,10 +2,12 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'ajeetdocker002/orengehrm-pim'
-        DOCKER_TAG = "latest"
-        DOCKER_CREDENTIALS = credentials('dockerhub-login')
-    }
+    DOCKER_IMAGE = 'ajeetdocker002/orengehrm-pim'
+    DOCKER_TAG = "latest"
+    DOCKER_CREDENTIALS_USR = credentials('dockerhub-login').username
+    DOCKER_CREDENTIALS_PSW = credentials('dockerhub-login').password
+    PATH = "C:\\Program Files\\nodejs;${env.PATH}"
+}
 
     stages {
         stage('Checkout Code') {
@@ -32,11 +34,10 @@ pipeline {
         stage('Run Cucumber Tests') {
     steps {
         echo 'Running Cucumber smoke tests...'
-       bat'npx cucumber-js --tags "@smoke"'
+       bat 'npx cucumber-js --tags "@smoke"'
     }
 }
-
-       stage('Publish Test Results') {
+stage('Publish Test Results') {
     steps {
         echo 'Publishing JUnit results...'
         junit 'reports/results.xml'
@@ -44,21 +45,22 @@ pipeline {
     }
 }
 
-        stage('Build Docker Image') {
-            steps {
-                echo 'Building Docker image...'
-                bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
-            }
-        }
+stage('Build Docker Image') {
+    steps {
+        echo 'Building Docker image...'
+        bat "docker build -t ${DOCKER_IMAGE}:${DOCKER_TAG} ."
+    }
+}
 
-        stage('Docker Login') {
-            steps {
-                echo 'Logging in to Docker Hub...'
-                bat """
-                    echo "${DOCKER_CREDENTIALS_PSW}" | docker login -u "${DOCKER_CREDENTIALS_USR}" --password-stdin
-                """
-            }
+stage('Docker Login') {
+    steps {
+        echo 'Logging in to Docker Hub...'
+        withCredentials([usernamePassword(credentialsId: 'dockerhub-login', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
+            bat 'echo %DOCKER_PASS% | docker login -u %DOCKER_USER% --password-stdin'
         }
+    }
+}
+
 
         stage('Push Docker Image') {
             steps {
