@@ -22,6 +22,11 @@ pipeline {
                 bat 'npm ci'
             }
         }
+stage('Install Browsers') {
+    steps {
+        bat 'npx playwright install chrome'
+    }
+}
 
         stage('Run Pre-Test Script') {
             steps {
