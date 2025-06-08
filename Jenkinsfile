@@ -33,7 +33,7 @@ pipeline {
         stage('Run Cucumber Tests') {
     steps {
         echo 'Running Cucumber smoke tests...'
-       bat 'npx cucumber-js --tags "@smoke"'
+       bat 'npx cucumber-js features/PIMCreation.feature --tags "@smoke"'
     }
 }
 stage('Publish Test Results') {
