@@ -4,8 +4,7 @@ pipeline {
     environment {
     DOCKER_IMAGE = 'ajeetdocker002/orengehrm-pim'
     DOCKER_TAG = "latest"
-    DOCKER_CREDENTIALS_USR = credentials('dockerhub-login').username
-    DOCKER_CREDENTIALS_PSW = credentials('dockerhub-login').password
+    
     PATH = "C:\\Program Files\\nodejs;${env.PATH}"
 }
 
