@@ -20,7 +20,7 @@ import { getEmployeeTestData } from '../../src/utils/readExcel';
 
    
 When('I fill in the required fields with valid data', async function (this: CustomWorld) {
-  const data = await getEmployeeTestData('Personal Details'); // Reads 2nd row from "Personal Details" sheet
+  const data = await getEmployeeTestData('Personal Details'); 
 
   await this.PIMPage.clickAddButton();
 
