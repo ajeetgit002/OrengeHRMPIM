@@ -1,6 +1,6 @@
 {
   "projectName": "OrengeHRM",
-  "description": "A brief description of the project.",
+  "description": "This is a orenge HRM management project uses for practice ",
   "runAndGenerate Report ": [
     "Clone the repository using 'git clone'",
     "Run 'npm run test' to execute the tests",

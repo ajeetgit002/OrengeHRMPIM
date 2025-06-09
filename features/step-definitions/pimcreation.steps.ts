@@ -2,9 +2,7 @@ import { Given, When, Then } from "@cucumber/cucumber";
 import {expect} from '@playwright/test';
 import { CustomWorld } from "../support/world";
 import { getEmployeeTestData } from '../../src/utils/readExcel';
-import { da } from "@faker-js/faker/.";
-import { PluginManager } from "@cucumber/cucumber/lib/plugin";
-import { waitForDebugger } from "inspector";
+
 
 
 // let data: Record<string, any>; 

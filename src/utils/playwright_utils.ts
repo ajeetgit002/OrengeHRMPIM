@@ -22,7 +22,7 @@ export class PlaywrightUtils {
 
     /**
      * Gets the current page
-     * @returns Page - Current Playwright Page object
+     * @returns page - Current Playwright Page object
      */
       getPage(): Page {
         return this.page;
@@ -81,19 +81,6 @@ export class PlaywrightUtils {
         await this.page.fill(selector, value, { timeout: timeout || this.ELEMENT_TIMEOUT });
     }
 
-    /**
-     * Types text into an input field with optional delay between keystrokes
-     * @param selector - CSS selector of the input field
-     * @param value - Text to type
-     * @param delay - Delay between keystrokes in milliseconds (default: 100)
-     * @param timeout - Optional timeout in milliseconds
-     */
-    async type(selector: string, value: string, delay: number = 100, timeout?: number) {
-        await this.page.type(selector, value, { 
-            delay, 
-            timeout: timeout || this.ELEMENT_TIMEOUT 
-        });
-    }
 
     /**
      * Selects an option from a dropdown
