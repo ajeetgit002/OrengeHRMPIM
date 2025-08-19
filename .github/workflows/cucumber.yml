@@ -1,4 +1,4 @@
-name: CI/CD Pipeline for PIM Project
+name: CI/CD Pipeline for OrangeHRM PIM Project
 
 on:
   push:
@@ -10,45 +10,91 @@ jobs:
   build-test-deploy:
     runs-on: ubuntu-latest
 
+    env:
+      SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      SERVER_USER: ${{ secrets.SERVER_USER }}
+      SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
     steps:
-      # 1. Checkout Code
+      # 1. Checkout code
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # 2. Setup Node.js
+      # 2. Setup Terraform
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: '1.5.6'
+
+      # 3. Terraform init
+      - name: Terraform Init
+        run: terraform init
+
+      # 4. Terraform apply infra
+      - name: Terraform Apply
+        run: terraform apply -auto-approve
+
+      # 5. Cache npm dependencies
+      - name: Cache npm modules
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 6. Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      # 3. Install Dependencies
+      # 7. Install dependencies
       - name: Install dependencies
         run: npm ci
 
-      # 4. Optional: Run Build (if you have one)
+      # 8. Optional build step
       - name: Run build step
         run: npm run build || echo "No build step found"
 
-      # 5. Generate Test Excel (custom utility)
+      # 9. Generate Excel report (custom step)
       - name: Generate Excel Report
         run: npx ts-node src/utils/generateExcel.ts
 
-      # 6. Run Cucumber Smoke Tests
+      # 10. Run Cucumber smoke tests
       - name: Run Cucumber smoke tests
         run: npx cucumber-js features/PIMCreation.feature --tags "@smoke"
 
-      # 7. Upload Screenshots (Artifacts on failure)
-      - name: Upload screenshots
+      # 11. Upload screenshots if tests fail
+      - name: Upload failure screenshots
         if: failure()
         uses: actions/upload-artifact@v4
         with:
           name: failure-screenshots
           path: test-results/screenshots/
 
-      # 8. Deploy step (optional)
+      # 12. Upload cucumber test results always
+      - name: Upload cucumber test results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-results
+          path: test-results/cucumber.json
+
+      # 13. Deploy to server if tests succeed
       - name: Deploy to server
         if: success()
-        run: |
-          echo "Deploying to server..."
-          # Add your deployment logic here
-          # For example, using SSH to upload files or run a remote script
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: ${{ env.SERVER_HOST }}
+          username: ${{ env.SERVER_USER }}
+          key: ${{ env.SSH_PRIVATE_KEY }}
+          script: |
+            cd /path/to/deploy
+            ./deploy.sh
+
+      # 14. Optional: Terraform destroy (cleanup)
+      # Uncomment if you want to destroy infra after tests
+      # - name: Terraform Destroy
+      #   if: always()
+      #   run: terraform destroy -auto-approve
