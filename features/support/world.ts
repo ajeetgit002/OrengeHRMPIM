@@ -15,7 +15,6 @@ export class CustomWorld extends World {
   public playwrightUtils!: PlaywrightUtils;
   public dashboardPage!: DashboardPage;
   public PIMPage!: PIMPage;
-
   constructor(options: IWorldOptions) {
     super(options);
   }
