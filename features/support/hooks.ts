@@ -18,6 +18,8 @@ BeforeAll(async function () {
     try {
         browser = await chromium.launch();
     } catch (error) {
+
+        
         console.error('Failed to launch browser:', error);
         throw error;
     }
