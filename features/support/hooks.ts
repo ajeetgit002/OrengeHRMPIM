@@ -29,7 +29,7 @@ BeforeAll(async function () {
 Before(async function (this: CustomWorld) {
     try {
          this.context = await browser.newContext({
-            viewport: null // <-- This is required for maximizing to take effect
+            viewport: null 
         });
   this.page = await this.context.newPage();
 
@@ -65,7 +65,7 @@ After(async function (this: CustomWorld) {
 
 AfterAll(async function () {
     try {
-await browser?.close();
+       await browser?.close();
     } catch (error) {
         console.error('Failed to close browser:', error);
     }

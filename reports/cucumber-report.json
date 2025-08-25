@@ -1,0 +1,567 @@
+[
+  {
+    "description": "    As a user\n    I want to create a PIM (Product Information Management)\n    So that I can manage product-related data effectively",
+    "elements": [
+      {
+        "description": "",
+        "id": "pim-creation;successfully-create-a-new-pim",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "Successfully create a new PIM",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 22947589199
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I enter valid username and password",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:7"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 912695898
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1572884099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 11,
+            "name": "I navigate to the PIM creation page",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2977842398
+            },
+            "embeddings": [
+              {
+                "data": "UElNIFBhZ2UgSGVhZGVyIGlzIHZpc2libGU=",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "I fill in the required fields with valid data",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:22"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1444092799
+            },
+            "embeddings": [
+              {
+                "data": "QWRkIEVtcGxveWVlIFBhZ2UgSGVhZGVyIGlzIHZpc2libGU=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "RW1wbG95ZWUgSUQgaXMgNzc0NDUz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "I click on the Save button",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:43"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 265109498
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "I should see a confirmation message \"Success\"",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:198"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1859396798
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I enter Employee Personal Information Management",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:48"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 6057708399
+            },
+            "embeddings": [
+              {
+                "data": "T3RoZXIgSUQgaXMgU1dVQUgw",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "RHJpdmluZyBMaWNlbnNlIGlzIFQ1WUdFOFVO",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "TGljZW5zZSBFeHBpcnkgRGF0ZSBpcyAyMDI4LTAzLTA4",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "TmF0aW9uYWxpdHkgaXMgQXVzdHJhbGlhbg==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "TWFyaXRhbCBTdGF0dXMgaXMgU2luZ2xl",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "RGF0ZSBvZiBCaXJ0aCBpcyAxOTkyLTA4LTAz",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "R2VuZGVyIGlzIE1hbGU=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "U3VjY2VzcyBtZXNzYWdlIGlzIFN1Y2Nlc3M=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Qmxvb2QgVHlwZSBpcyBPLQ==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "VGVzdCBGaWVsZCBpcyBTYW1wbGUgVGV4dA==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q3VzdG9tIFN1Y2Nlc3MgbWVzc2FnZSBpcyBTdWNjZXNz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I enter Employee Contact Information Management",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:97"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4154073399
+            },
+            "embeddings": [
+              {
+                "data": "Q29udGFjdCBEZXRhaWxzIFBhZ2UgSGVhZGVyIDpDb250YWN0IERldGFpbHM=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBIb21lIE51bWJlciA6NDAyNDU1MjI4NzQxMDc=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBNaWJpbGUgTnVtYmVyIDoxLTI1MS0yMTktMzQxNzg1MzE4",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBPZmZpY2UgTnVtYmVyIDoxLTc5NC03MzUtNTcxOTk2MQ==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBPZmZpY2UgRW1haWwgIDpNYWxpbmRhMjVAaG90bWFpbC5jb20=",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q29udGFjdCBPdGhlciBFbWFpbCA6Q3VydDIzQGdtYWlsLmNvbQ==",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Q3VzdG9tIFN1Y2Nlc3MgbWVzc2FnZSBpcyBTdWNjZXNz",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 17,
+            "name": "I enter Employee Job Information",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:129"
+            },
+            "result": {
+              "status": "failed",
+              "duration": 32708872999,
+              "error_message": "locator.waitFor: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByText('Automaton Tester', { exact: true }) to be visible\u001b[22m\n\n    at PIMPage.selectJobTitle (C:\\Users\\ajeet.yadav\\Desktop\\CATSITSM\\src\\pages\\PIMPage.ts:279:31)\n    at async World.<anonymous> (C:\\Users\\ajeet.yadav\\Desktop\\CATSITSM\\features\\step-definitions\\pimcreation.steps.ts:143:1)"
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 18,
+            "name": "I enter Qualification Information",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:163"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "the new PIM should be listed in the PIM management section",
+            "match": {
+              "location": "features\\step-definitions\\pimcreation.steps.ts:206"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 7541700
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@smoke",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "pim-creation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "PIM Creation",
+    "tags": [],
+    "uri": "features\\featur-files\\PIMCreation.feature"
+  },
+  {
+    "description": "  In order to see the dashboard\n  As a user\n  I want to see the dashboard",
+    "elements": [
+      {
+        "description": "",
+        "id": "dashboard-should-be-displayed;user-sees-the-dashboard",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "User sees the dashboard",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6159281200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I emter valid username and password",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:16"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 12,
+            "name": "I am on the dashboard page",
+            "match": {
+              "location": "features\\step-definitions\\dashboard.steps.ts:6"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 13,
+            "name": "I should see the dashboard title",
+            "match": {
+              "location": "features\\step-definitions\\dashboard.steps.ts:15"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 14,
+            "name": "I should see the dashboard content",
+            "match": {
+              "location": "features\\step-definitions\\dashboard.steps.ts:24"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6356500
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "dashboard-should-be-displayed",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Dashboard should be displayed",
+    "tags": [],
+    "uri": "features\\featur-files\\dashboard.feature"
+  },
+  {
+    "description": "As a user\nI want to log in to the OrangeHRM application\nSo thar I can access the dashboard ",
+    "elements": [
+      {
+        "description": "",
+        "id": "login-to-orangehrm;user-successfully-logs-in-to-orangehrm",
+        "keyword": "Scenario",
+        "line": 10,
+        "name": "User successfully logs in to OrangeHRM",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6313739099
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I emter valid username and password",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:16"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 11,
+            "name": "I should be logged in and see the dashboard",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:20"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 12,
+            "name": "I should see the welcome message",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:27"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 6371499
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@regression",
+            "line": 9
+          }
+        ],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "login-to-orangehrm;user-fails-to-log-in-with-invalid-credentials",
+        "keyword": "Scenario",
+        "line": 14,
+        "name": "User fails to log in with invalid credentials",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 3905768200
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "I emter valid username and password",
+            "result": {
+              "status": "undefined",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:16"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 15,
+            "name": "I enter invalid username and password",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:35"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 16,
+            "name": "I click on the login button",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:16"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 17,
+            "name": "I should see an error message",
+            "match": {
+              "location": "features\\step-definitions\\sample.steps.ts:40"
+            },
+            "result": {
+              "status": "skipped",
+              "duration": 0
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 4896599
+            }
+          }
+        ],
+        "tags": [
+          {
+            "name": "@skip",
+            "line": 13
+          }
+        ],
+        "type": "scenario"
+      }
+    ],
+    "id": "login-to-orangehrm",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Login to OrangeHRM",
+    "tags": [],
+    "uri": "features\\featur-files\\login.feature"
+  }
+]

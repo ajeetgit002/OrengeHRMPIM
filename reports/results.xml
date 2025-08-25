@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<testsuite name="Cucumber" time="107.446" tests="4" skipped="0" failures="4" errors="0" timestamp="2025-08-25T07:31:50.716Z">
+  <testcase classname="PIM Creation" name="Successfully create a new PIM" time="74.916">
+    <failure type="TimeoutError" message="locator.waitFor: Timeout 30000ms exceeded.&#xA;Call log:&#xA;[2m  - waiting for getByText('Automaton Tester', { exact: true }) to be visible[22m&#xA;"><![CDATA[    at PIMPage.selectJobTitle (C:\Users\ajeet.yadav\Desktop\CATSITSM\src\pages\PIMPage.ts:279:31)
+    at async World.<anonymous> (C:\Users\ajeet.yadav\Desktop\CATSITSM\features\step-definitions\pimcreation.steps.ts:143:1)]]></failure>
+    <system-out><![CDATA[When I enter valid username and password....................................passed
+And I click on the login button.............................................passed
+And I navigate to the PIM creation page.....................................passed
+When I fill in the required fields with valid data..........................passed
+And I click on the Save button..............................................passed
+Then I should see a confirmation message "Success"..........................passed
+When I enter Employee Personal Information Management.......................passed
+And I enter Employee Contact Information Management.........................passed
+And I enter Employee Job Information........................................failed
+And I enter Qualification Information.......................................skipped
+And the new PIM should be listed in the PIM management section..............skipped]]></system-out>
+  </testcase>
+  <testcase classname="Dashboard should be displayed" name="User sees the dashboard" time="6.167">
+    <failure/>
+    <system-out><![CDATA[When I emter valid username and password....................................undefined
+And I click on the login button.............................................skipped
+Given I am on the dashboard page............................................skipped
+Then I should see the dashboard title.......................................skipped
+And I should see the dashboard content......................................skipped]]></system-out>
+  </testcase>
+  <testcase classname="Login to OrangeHRM" name="User successfully logs in to OrangeHRM" time="6.322">
+    <failure/>
+    <system-out><![CDATA[When I emter valid username and password....................................undefined
+And I click on the login button.............................................skipped
+Then I should be logged in and see the dashboard............................skipped
+And I should see the welcome message........................................skipped]]></system-out>
+  </testcase>
+  <testcase classname="Login to OrangeHRM" name="User fails to log in with invalid credentials" time="3.912">
+    <failure/>
+    <system-out><![CDATA[When I emter valid username and password....................................undefined
+And I click on the login button.............................................skipped
+When I enter invalid username and password..................................skipped
+And I click on the login button.............................................skipped
+Then I should see an error message..........................................skipped]]></system-out>
+  </testcase>
+</testsuite>
