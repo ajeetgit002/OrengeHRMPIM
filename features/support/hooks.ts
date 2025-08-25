@@ -17,9 +17,7 @@ let context: BrowserContext;
 
 BeforeAll(async function () {
     try {
-        browser = await chromium.launch({headless:false , channel: 'chrome',  args: ['--start-maximized']},
-
-       
+        browser = await chromium.launch(      
         );
     } catch (error) {
         console.error('Failed to launch browser:', error);
