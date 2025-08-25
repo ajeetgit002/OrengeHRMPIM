@@ -17,12 +17,13 @@ let context: BrowserContext;
 
 BeforeAll(async function () {
     try {
-        browser = await chromium.launch({headless:false , channel: 'chrome',  args: ['--start-maximized']}
+        browser = await chromium.launch({headless:false , channel: 'chrome',  args: ['--start-maximized']},
 
        
         );
     } catch (error) {
         console.error('Failed to launch browser:', error);
+        console.log("Hell0 !")
         throw error;
     }
 });
