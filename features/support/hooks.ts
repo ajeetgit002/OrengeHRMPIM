@@ -8,6 +8,7 @@ import { config } from '../../src/Config/config';
 import { DashboardPage } from '../../src/pages/DashboardPage';
 import { PIMPage } from '../../src/pages/PIMPage';
 
+
 // Set timeout for all steps to 60 seconds
 setDefaultTimeout(60 * 1000);
 
@@ -16,11 +17,15 @@ let context: BrowserContext;
 
 BeforeAll(async function () {
     try {
-        browser = await chromium.launch();
+        browser = await chromium.launch({headless:false , channel: 'chrome',  args: ['--start-maximized']},
+
+       
+        );
     } catch (error) {
 
         
         console.error('Failed to launch browser:', error);
+        console.log("Hell0 !")
         throw error;
     }
 });
@@ -36,7 +41,7 @@ Before(async function (this: CustomWorld) {
   this.playwrightUtils = new PlaywrightUtils(this.page);
   this.loginPage = new Login_Page(this.playwrightUtils);
   this.dashboardPage=new DashboardPage(this.playwrightUtils);
-this.PIMPage=new PIMPage(this.playwrightUtils);
+  this.PIMPage=new PIMPage(this.playwrightUtils);
 
   await this.playwrightUtils.navigate(config.url);
     } catch (error) {
@@ -56,7 +61,7 @@ AfterStep(async function (this: CustomWorld, scenario) {
 
 After(async function (this: CustomWorld) {
     try {
-      await this.context?.close();
+ await this.context?.close();
     } catch (error) {
         console.error('Failed to close context:', error);
     }
@@ -64,7 +69,7 @@ After(async function (this: CustomWorld) {
 
 AfterAll(async function () {
     try {
- await browser?.close();
+await browser?.close();
     } catch (error) {
         console.error('Failed to close browser:', error);
     }
