@@ -7,7 +7,7 @@ import { getEmployeeTestData } from '../../src/utils/readExcel';
 
 // let data: Record<string, any>; 
 
-         When('I navigate to the PIM creation page', async function (this: CustomWorld) {
+When('I navigate to the PIM creation page', async function (this: CustomWorld) {
 
             await this.PIMPage.clickPIMLink();
 
@@ -21,20 +21,14 @@ import { getEmployeeTestData } from '../../src/utils/readExcel';
    
 When('I fill in the required fields with valid data', async function (this: CustomWorld) {
   const data = await getEmployeeTestData('Personal Details'); 
-
   await this.PIMPage.clickAddButton();
-
   const idAddEmployeePageHeaderVisible = await this.PIMPage.idAddEmployeePageHeaderVisible(5000);
   expect(idAddEmployeePageHeaderVisible).toBe(true);
-
   this.attach('Add Employee Page Header is visible', 'text/plain');
-
   await this.PIMPage.enterFirstName(data['Employee Full Name'].split(' ')[0]); // First name
   await this.PIMPage.enterLastName(data['Employee Full Name'].split(' ')[1] || ''); // Last name
-
   const empid = await this.PIMPage.genearateRandomEMployeeID();
   await this.PIMPage.enterEmployeeID(empid);
-
   this.attach(`Employee ID is ${empid}`, 'text/plain');
 });
 
@@ -49,15 +43,10 @@ When('I fill in the required fields with valid data', async function (this: Cust
    const data = await getEmployeeTestData('Personal Details');
   await this.PIMPage.enterOtherID(data['Other ID']);
     this.attach(`Other ID is ${data['Other ID']}`, 'text/plain');
-
     await this.PIMPage.enterDrivingLicense(data['Driving License']);
     this.attach(`Driving License is ${data['Driving License']}`, 'text/plain');
-
-   
-
     await this.PIMPage.enterLicenseExpiryDate(data['License Expiry Date']);
     this.attach(`License Expiry Date is ${data['License Expiry Date']}`, 'text/plain');
-
 
 try{
     await this.PIMPage.selectNationality(5000);

@@ -1,7 +1,7 @@
-import { time, timeLog } from 'console';
+
 import { PlaywrightUtils } from '../utils/playwright_utils';
 import { Page } from '@playwright/test';
-import { tr } from '@faker-js/faker/.';
+
 
 
 export class PIMPage {

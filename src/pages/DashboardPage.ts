@@ -9,16 +9,11 @@ export class DashboardPage {
         modulelist:"//a//span",
         pimmodule:"//span[text()='PIM']"
 
-
-
     }
-
-
 
     constructor(private PlaywrightUtils: PlaywrightUtils) {
         this.PlaywrightUtils = PlaywrightUtils;
     }
-
 
     async isMyAccountVisible(timeout?: number) {
 
@@ -31,14 +26,12 @@ export class DashboardPage {
         return await this.PlaywrightUtils.isVisible(this.seleçtor.modulelist, timeout);
 
     }
-
-
     async getModuleList(timeout?:number){
         return await this.PlaywrightUtils.getTexts(this.seleçtor.modulelist, timeout);
 
     }
 
-async clickPIMModule(timeout?:number){
+    async clickPIMModule(timeout?:number){
 
     await this.PlaywrightUtils.click(this.seleçtor.pimmodule,timeout)
 
